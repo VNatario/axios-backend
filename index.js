@@ -13,6 +13,6 @@ console.log("1... 2... 3... rodando");
 app.route("/").get((req, res) => {
   axios
     .get("https://api.github.com/users/VNatario")
-    .then((result) => res.send(result.data))
+    .then((result) => res.send(`<img src="${result.data.avatar_url}"/>`))
     .catch((e) => console.error(e));
 });
